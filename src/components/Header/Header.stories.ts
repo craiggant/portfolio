@@ -2,18 +2,30 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Header from './Header';
 
+type Story = StoryObj<typeof meta>;
+
 const meta = {
-	title: 'Example/Header',
+	title: 'Components/Header',
 	component: Header,
 	parameters: {
-		layout: 'centered'
+		// layout: 'centered',
+		actions: { argTypesRegex: '^on.*' },
+		backgrounds: {
+			default: 'dark',
+			values: [
+				{
+					name: 'dark',
+					value: '#000'
+				},
+				{
+					name: 'light',
+					value: '#fff'
+				}
+			]
+		}
 	},
 	tags: ['autodocs']
 } satisfies Meta<typeof Header>;
-
-export default meta;
-
-type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
 	args: {
@@ -22,3 +34,5 @@ export const Primary: Story = {
 		description: 'This is a description of the header component'
 	}
 };
+
+export default meta;
