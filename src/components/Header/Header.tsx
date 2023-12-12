@@ -19,13 +19,16 @@ type THeaderProps = {
 /** Header that displays key details about the developer */
 
 const Header = ({ name, title, description }: THeaderProps) => {
-	const { colorTheme } = useContext(ColorThemeContext);
-	console.log(colorTheme);
+	const { colorTheme, setColorTheme } = useContext(ColorThemeContext);
+	const handleClick = () =>
+		setColorTheme(colorTheme === 'dark' ? 'light' : 'dark');
+
 	return (
 		<header className="header">
 			<h1>{name}</h1>
 			<h2>{title}</h2>
 			<p>{description}</p>
+			<button onClick={handleClick}>Set Color Theme</button>
 		</header>
 	);
 };
