@@ -1,14 +1,17 @@
 // components
-import { Header } from '../components';
+import { Header } from '../../components';
 
 // hooks
-import { useSetColorTheme } from '../hooks';
+import { useSetColorTheme } from '../../hooks';
+
+// styles
+import './Homepage.scss';
 
 const Homepage = () => {
 	useSetColorTheme();
 
 	return (
-		<main>
+		<main className="homepage">
 			<Header
 				name="Craig Gant"
 				title="Software Engineer"

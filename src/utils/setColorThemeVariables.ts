@@ -6,8 +6,8 @@ const themes = {
 		'--color-text': '#000'
 	},
 	dark: {
-		'--color-background': '#000',
-		'--color-text': '#fff'
+		'--color-background': '#3F3F3F',
+		'--color-text': '#88C8CB'
 	}
 };
 
