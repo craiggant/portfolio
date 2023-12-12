@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Header from './Header';
+import ColorThemeSwitch from './ColorThemeSwitch';
 
 type Story = StoryObj<typeof meta>;
 
 const meta = {
-	title: 'Components/Header',
-	component: Header,
+	title: 'Components/ColorThemeSwitch',
+	component: ColorThemeSwitch,
 	parameters: {
 		layout: 'centered',
 		actions: { argTypesRegex: '^on.*' },
@@ -25,14 +25,10 @@ const meta = {
 		}
 	},
 	tags: ['autodocs']
-} satisfies Meta<typeof Header>;
+} satisfies Meta<typeof ColorThemeSwitch>;
 
 export const Primary: Story = {
-	args: {
-		name: 'John Doe',
-		title: 'Software Engineer',
-		description: 'This is a description of the header component'
-	}
+	args: {}
 };
 
 export default meta;
