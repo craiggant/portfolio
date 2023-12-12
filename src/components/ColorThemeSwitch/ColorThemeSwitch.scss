@@ -1,10 +1,7 @@
-@use '../../styles' as *;
-
 .color-theme-switch {
-	cursor: pointer;
-	user-select: none;
-
 	svg {
+		cursor: pointer;
+		user-select: none;
 		border: 1px solid var(--color-border);
 		border-radius: 50%;
 		color: var(--color-icon);
