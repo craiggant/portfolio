@@ -1,5 +1,5 @@
 // components
-import { ColorThemeSwitch, Header } from '../../components';
+import { About, ColorThemeSwitch, Header } from '../../components';
 
 // hooks
 import { useSetColorTheme } from '../../hooks';
@@ -17,7 +17,10 @@ const Homepage = () => {
 				title="Software Engineer"
 				description="Building beautiful and accessible web experiences"
 			/>
-			<ColorThemeSwitch />
+			<div className="homepage__right">
+				<ColorThemeSwitch />
+				<About />
+			</div>
 		</main>
 	);
 };
