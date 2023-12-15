@@ -10,16 +10,16 @@ type TThemeValue = {
 
 const themes: Record<TColorTheme, TThemeValue> = {
 	light: {
-		background: '#EAE2B7',
-		border: '#003049',
-		icon: '#003049',
-		text: '#003049'
+		background: '#F0F5F9',
+		border: '#A0C0DD',
+		icon: '#7895A2',
+		text: '#485E69'
 	},
 	dark: {
-		background: '#003049',
-		border: '#EAE2B7',
-		icon: '#EAE2B7',
-		text: '#EAE2B7'
+		background: '#121212',
+		border: '#282828',
+		icon: '#b3b3b3',
+		text: '#ffffff'
 	}
 };
 
