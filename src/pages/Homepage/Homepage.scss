@@ -6,4 +6,9 @@
 	height: 100vh;
 	background-color: var(--color-background);
 	padding: 2rem;
+	gap: 2rem;
+
+	&__right {
+		@include flex(column, flex-start, flex-end);
+	}
 }
