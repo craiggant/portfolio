@@ -1,9 +1,5 @@
-// packages
-import { useContext } from 'react';
-
-// contexts
-import { ColorThemeContext } from '../../contexts';
-
+// hooks
+import { useToggleColorTheme } from '../../hooks';
 // components
 import { AnimatedMoon, AnimatedSun } from '../index';
 
@@ -11,16 +7,17 @@ import { AnimatedMoon, AnimatedSun } from '../index';
 import './ColorThemeSwitch.scss';
 
 const ColorThemeSwitch = () => {
-	const { colorTheme, setColorTheme } = useContext(ColorThemeContext);
-
-	const handleClick = () =>
-		setColorTheme(colorTheme === 'dark' ? 'light' : 'dark');
+	const { colorTheme, toggleColorTheme } = useToggleColorTheme();
 
 	const themeIcon =
 		colorTheme === 'dark' ? <AnimatedMoon /> : <AnimatedSun />;
 
 	return (
-		<a className="color-theme-switch" type="button" onClick={handleClick}>
+		<a
+			className="color-theme-switch"
+			type="button"
+			onClick={toggleColorTheme}
+		>
 			{themeIcon}
 		</a>
 	);
