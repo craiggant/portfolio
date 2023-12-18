@@ -1,17 +1,61 @@
 @use '../../styles/' as *;
 
 .card {
-	@include flex(column, center, center);
-	width: 300px;
-	height: 200px;
-
+	@include flex(row);
+	width: 100%;
+	max-width: 40rem;
 	border-radius: 1rem;
-	background: var(--background);
+	padding: 1.5rem;
 	box-shadow: var(--box-shadow);
-	transition: box-shadow 0.3s ease-in-out;
+	transition: var(--box-shadow-transition);
+	gap: 1rem;
 
 	&:hover {
 		box-shadow: var(--raised-box-shadow);
-		// transition: box-shadow 0.3s ease-in-out;
+	}
+
+	&__left {
+		@include flex(column, center, flex-start);
+		width: 13rem;
+		color: var(--icon-alt);
+
+		& span {
+			font-weight: bold;
+			color: var(--icon-alt);
+			// offsets the font-size of the title text in __right-title
+			margin-top: 0.17rem;
+		}
+	}
+
+	&__right {
+		@include flex(column, space-between, flex-start);
+		width: 100%;
+
+		&-title {
+			font-size: 1.17rem;
+			color: var(--text);
+			font-weight: bold;
+		}
+
+		&-description {
+			color: var(--text);
+		}
+
+		&-tags {
+			@include flex(row, flex-start, center, wrap);
+			width: 100%;
+			gap: 0.5rem;
+			margin-top: 1rem;
+			color: var(--icon-alt);
+
+			&-wrapper {
+				@include flex(row, center, center, wrap);
+				gap: 0.5rem;
+				border-radius: 2rem;
+				padding: 0.25rem 0.5rem;
+				border: var(--icon-alt) 2px solid;
+				color: var(--icon-alt);
+			}
+		}
 	}
 }

@@ -10,7 +10,11 @@ const ColorThemeSwitch = () => {
 	const { colorTheme, toggleColorTheme } = useToggleColorTheme();
 
 	const themeIcon =
-		colorTheme === 'dark' ? <AnimatedMoon /> : <AnimatedSun />;
+		colorTheme === 'dark' ? (
+			<AnimatedMoon height={24} width={24} />
+		) : (
+			<AnimatedSun height={24} width={24} />
+		);
 
 	return (
 		<a

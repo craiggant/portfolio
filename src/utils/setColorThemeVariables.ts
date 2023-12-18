@@ -14,16 +14,20 @@ const themes: Record<TColorTheme, TThemeValue> = {
 		border: '#fc5130',
 		icon: '#fc5130',
 		text: '#1e1e24',
-		'box-shadow': '5px 5px 10px #bebebe, -5px -5px 10px #ffffff',
-		'raised-box-shadow': '25px 25px 50px #bebebe, -25px -25px 50px #ffffff'
+		'box-shadow':
+			'.3125rem .3125rem .625rem #bebebe, -.3125rem -.3125rem .625rem #ffffff',
+		'raised-box-shadow':
+			'1rem 1rem 1.5rem #bebebe, -1rem -1rem 1.5rem #ffffff'
 	},
 	dark: {
 		background: '#1e1e24',
 		border: '#88527f',
 		icon: '#88527f',
 		text: '#e0e0e0',
-		'box-shadow': '5px 5px 10px #0f0f12, -5px -5px 10px #2d2d36',
-		'raised-box-shadow': '25px 25px 50px #0f0f12, -25px -25px 50px #2d2d36'
+		'box-shadow':
+			'.3125rem .3125rem .625rem #0f0f12, -.3125rem -.3125rem .625rem #2d2d36',
+		'raised-box-shadow':
+			'1rem 1rem 1.5rem #0f0f12, -1rem -1rem 1.5rem #2d2d36'
 	}
 };
 
