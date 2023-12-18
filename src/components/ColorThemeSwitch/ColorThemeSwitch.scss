@@ -1,13 +1,17 @@
 .color-theme-switch {
-	svg {
+	& svg {
 		cursor: pointer;
 		user-select: none;
-		border: 1px solid var(--border);
+		box-shadow: var(--box-shadow);
 		border-radius: 50%;
 		color: var(--icon);
 		height: 2rem;
-		margin: 0.5rem;
 		padding: 0.5rem;
 		width: 2rem;
+		transition: var(--box-shadow-transition);
+
+		// &:hover {
+		// 	box-shadow: var(--raised-box-shadow);
+		// }
 	}
 }
