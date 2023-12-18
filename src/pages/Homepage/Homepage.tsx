@@ -1,5 +1,5 @@
 // components
-import { About, ColorThemeSwitch, Header } from '../../components';
+import { About, Card, ColorThemeSwitch, Header } from '../../components';
 
 // hooks
 import { useSetColorTheme } from '../../hooks';
@@ -20,6 +20,9 @@ const Homepage = () => {
 			<div className="homepage__right">
 				<ColorThemeSwitch />
 				<About />
+				<div className="homepage__right-experiences">
+					<Card></Card>
+				</div>
 			</div>
 		</main>
 	);

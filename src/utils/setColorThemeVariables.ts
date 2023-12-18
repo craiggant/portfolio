@@ -10,19 +10,22 @@ type TThemeValue = {
 
 const themes: Record<TColorTheme, TThemeValue> = {
 	light: {
-		background: '#F0F5F9',
-		border: '#A0C0DD',
-		icon: '#7895A2',
-		text: '#485E69'
+		background: '#e0e0e0',
+		border: '#fc5130',
+		icon: '#fc5130',
+		text: '#1e1e24',
+		'box-shadow': '5px 5px 10px #bebebe, -5px -5px 10px #ffffff',
+		'raised-box-shadow': '25px 25px 50px #bebebe, -25px -25px 50px #ffffff'
 	},
 	dark: {
-		background: '#121212',
-		border: '#282828',
-		icon: '#b3b3b3',
-		text: '#ffffff'
+		background: '#1e1e24',
+		border: '#88527f',
+		icon: '#88527f',
+		text: '#e0e0e0',
+		'box-shadow': '5px 5px 10px #0f0f12, -5px -5px 10px #2d2d36',
+		'raised-box-shadow': '25px 25px 50px #0f0f12, -25px -25px 50px #2d2d36'
 	}
 };
-
 const setColorThemeVariables = (theme: TColorTheme) => {
 	const { style } = document.documentElement;
 	const themeVariables = themes[theme];
@@ -31,8 +34,8 @@ const setColorThemeVariables = (theme: TColorTheme) => {
 
 	Object.entries(themeVariables).forEach(([key, value]) => {
 		const altValue = altThemeVariables[key];
-		style.setProperty(`--color-${key}`, value);
-		style.setProperty(`--color-${key}-alt`, altValue);
+		style.setProperty(`--${key}`, value);
+		style.setProperty(`--${key}-alt`, altValue);
 	});
 };
 
