@@ -4,11 +4,18 @@
 	@include flex(row, space-between);
 	width: 100vw;
 	height: 100vh;
-	background-color: var(--color-background);
+	background-color: var(--background);
+	background-image: var(--background-image);
 	padding: 2rem;
 	gap: 2rem;
 
 	&__right {
 		@include flex(column, flex-start, flex-end);
+
+		&-experiences {
+			@include flex(column, flex-start, flex-start);
+			gap: 1rem;
+			margin-top: 2rem;
+		}
 	}
 }
