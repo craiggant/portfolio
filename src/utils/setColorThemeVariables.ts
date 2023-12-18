@@ -26,17 +26,40 @@ const themes: Record<TColorTheme, TThemeValue> = {
 		'raised-box-shadow': '25px 25px 50px #0f0f12, -25px -25px 50px #2d2d36'
 	}
 };
+
+const removeTransitionVariables = (style: CSSStyleDeclaration) => {
+	if (!style) return;
+
+	style.removeProperty('--box-shadow-transition');
+};
+
+// function for setting transition variables individually so that the transitions don't cause a color flash on theme switch (called after setColorThemeVariables in context provider)
+const setTransitionVariables = (style: CSSStyleDeclaration) => {
+	if (!style) return;
+	// setTimeout is used to delay the transition until after the theme change has been rendered
+	setTimeout(() => {
+		style.setProperty(
+			'--box-shadow-transition',
+			'box-shadow 0.3s ease-in-out'
+		);
+	}, 300);
+};
+
 const setColorThemeVariables = (theme: TColorTheme) => {
 	const { style } = document.documentElement;
 	const themeVariables = themes[theme];
 	const altTheme = theme === 'light' ? 'dark' : 'light';
 	const altThemeVariables = themes[altTheme];
 
+	removeTransitionVariables(style);
+
 	Object.entries(themeVariables).forEach(([key, value]) => {
 		const altValue = altThemeVariables[key];
 		style.setProperty(`--${key}`, value);
 		style.setProperty(`--${key}-alt`, altValue);
 	});
+
+	setTransitionVariables(style);
 };
 
 export default setColorThemeVariables;
