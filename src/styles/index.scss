@@ -1,5 +1,22 @@
 @forward 'mixins';
 
+/* Scrollbar Styles */
+html {
+	scrollbar-width: thin;
+	scrollbar-color: var(--background-alt);
+}
+::-webkit-scrollbar {
+	width: 12px;
+}
+::-webkit-scrollbar-track {
+	background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+	background-color: var(--background-alt);
+	border: 3px solid var(--background);
+	border-radius: 10px;
+}
+
 body {
 	font-family: 'Mukta', sans-serif;
 	background-color: var(--background);

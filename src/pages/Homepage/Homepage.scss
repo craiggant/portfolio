@@ -18,6 +18,7 @@
 	&__right {
 		@include flex(column, flex-start, flex-end);
 		padding: 5rem 0;
+
 		&-experiences {
 			@include flex(column, flex-start, center);
 			width: 100%;
