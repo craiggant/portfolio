@@ -51,7 +51,7 @@ const Homepage = () => {
 						/>
 						<Card
 							company="University of Central Florida"
-							startDate="Sept 2020"
+							startDate="Sep 2020"
 							endDate="Apr 2022"
 							title="Web Applications Developer"
 							descriptions={[
@@ -60,6 +60,17 @@ const Homepage = () => {
 								'• Converted legacy ColdFusion applications into modern JavaScript apps'
 							]}
 							tags={['TypeScript', 'React', 'Next', 'MongoDB']}
+						/>
+						<Card
+							company="Chec/Commerce.js"
+							startDate="Jun 2020"
+							endDate="Sep 2020"
+							title="Developer Resources Contributor"
+							descriptions={[
+								'• Created eCommerce projects and integration guides using the Chec and Commerce.js SDKs and API.',
+								'• Built tutorials and proof of concept applications showing how one could use 3D technologies (like three.js and react-three-fiber) within a cart/checkout experience.'
+							]}
+							tags={['React', 'Three.js']}
 						/>
 					</div>
 				</div>
