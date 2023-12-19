@@ -1,6 +1,6 @@
 @use '../../styles/' as *;
 
-.card {
+.employment-card {
 	@include flex(row);
 	width: 100%;
 	border-radius: 1rem;
@@ -55,6 +55,15 @@
 				border: var(--icon-alt) 2px solid;
 				color: var(--icon-alt);
 			}
+		}
+	}
+
+	&__link {
+		text-decoration: none;
+
+		&:hover > * {
+			color: black;
+			transition: color 0.2s ease-in-out;
 		}
 	}
 }

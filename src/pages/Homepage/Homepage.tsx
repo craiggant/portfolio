@@ -40,10 +40,16 @@ const Homepage = () => {
 					title="Software Engineer"
 					description="Building beautiful and accessible web experiences"
 				/>
+
 				<div className="homepage__right">
 					<ColorThemeSwitch />
-					<About />
-					<div className="homepage__right-experiences">
+					<div id="about">
+						<About />
+					</div>
+					<div
+						className="homepage__right-experiences"
+						id="experience"
+					>
 						{cardsToDisplay}
 					</div>
 				</div>

@@ -17,7 +17,7 @@ const employmentHistory: TEmploymentHistory[] = [
 	{
 		company: 'Charter Communications',
 		companyLogo: '',
-		companyUrl: '',
+		companyUrl: 'https://corporate.charter.com/',
 		endDate: 'Oct 2023',
 		id: '20',
 		startDate: 'Apr 2022',

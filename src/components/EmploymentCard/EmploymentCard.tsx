@@ -23,26 +23,35 @@ const EmploymentCard = ({
 
 	const tagsToRender = technologies.length
 		? technologies.map((tag) => (
-				<span className="card__right-tags-wrapper" key={tag}>
+				<span className="employment-card__right-tags-wrapper" key={tag}>
 					{tag}
 				</span>
 		  ))
 		: null;
 
 	return (
-		<div className="card">
-			<div className="card__left">
-				<span>{company}</span>
+		<div className="employment-card">
+			<div className="employment-card__left">
+				<a
+					href={companyUrl}
+					className="employment-card__link"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<span>{company}</span>
+				</a>
 				<div>
 					{startDate} - {endDate}
 				</div>
 			</div>
-			<div className="card__right">
-				<div className="card__right-title">{title}</div>
-				<div className="card__right-description">
+			<div className="employment-card__right">
+				<div className="employment-card__right-title">{title}</div>
+				<div className="employment-card__right-description">
 					{descriptionsToRender}
 				</div>
-				<div className="card__right-tags">{tagsToRender}</div>
+				<div className="employment-card__right-tags">
+					{tagsToRender}
+				</div>
 			</div>
 		</div>
 	);
