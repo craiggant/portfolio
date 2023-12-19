@@ -1,37 +1,28 @@
-// styles
-import './Card.scss';
+import { TEmploymentHistory } from '../../types';
 
-type TCardProps = {
-	// company name
-	company: string;
-	// description/explanation of the title
-	descriptions: string[];
-	// end date
-	endDate: string;
-	// start date
-	startDate: string;
-	// tags
-	tags: string[];
-	// main text for the card
-	title: string;
-};
+// styles
+import './EmploymentCard.scss';
+
+type TEmploymentCardProps = Omit<TEmploymentHistory, 'id'>;
 
 /** Card that displays info, desc, and tags and raises on hover */
 
-const Card = ({
+const EmploymentCard = ({
 	company,
-	descriptions,
+	companyLogo,
+	companyUrl,
+	taskDescriptions,
 	endDate,
 	startDate,
-	tags,
+	technologies,
 	title
-}: TCardProps) => {
-	const descriptionsToRender = descriptions.length
-		? descriptions.map((desc) => <p key={desc}>{desc}</p>)
+}: TEmploymentCardProps) => {
+	const descriptionsToRender = taskDescriptions.length
+		? taskDescriptions.map((desc) => <p key={desc}>{desc}</p>)
 		: null;
 
-	const tagsToRender = tags.length
-		? tags.map((tag) => (
+	const tagsToRender = technologies.length
+		? technologies.map((tag) => (
 				<span className="card__right-tags-wrapper" key={tag}>
 					{tag}
 				</span>
@@ -57,4 +48,4 @@ const Card = ({
 	);
 };
 
-export default Card;
+export default EmploymentCard;
