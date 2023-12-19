@@ -3,7 +3,6 @@
 .card {
 	@include flex(row);
 	width: 100%;
-	max-width: 40rem;
 	border-radius: 1rem;
 	padding: 1.5rem;
 	box-shadow: var(--box-shadow);

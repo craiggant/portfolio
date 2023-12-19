@@ -12,7 +12,8 @@ const themes: Record<TColorTheme, TThemeValue> = {
 	light: {
 		background: '#e0e0e0',
 		border: '#fc5130',
-		icon: '#fc5130',
+		// icon: '#fc5130',
+		icon: '#88527f',
 		text: '#1e1e24',
 		'box-shadow':
 			'.3125rem .3125rem .625rem #bebebe, -.3125rem -.3125rem .625rem #ffffff',
