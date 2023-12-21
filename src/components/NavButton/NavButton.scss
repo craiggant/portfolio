@@ -12,12 +12,13 @@
 		transition: var(--box-shadow-transition);
 
 		&:hover {
-			box-shadow: var(--raised-box-shadow);
+			// box-shadow: var(--raised-box-shadow);
+			box-shadow: var(--inset-box-shadow);
 		}
 	}
 
 	&-selected {
-		box-shadow: var(--raised-box-shadow) !important;
+		box-shadow: var(--inset-box-shadow) !important;
 		color: var(--text);
 	}
 }

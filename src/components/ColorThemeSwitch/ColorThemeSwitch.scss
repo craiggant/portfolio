@@ -10,4 +10,8 @@
 		width: 2rem;
 		transition: var(--box-shadow-transition);
 	}
+
+	& svg:hover {
+		box-shadow: var(--inset-box-shadow);
+	}
 }
