@@ -16,9 +16,11 @@ const themes: Record<TColorTheme, TThemeValue> = {
 		icon: '#88527f',
 		text: '#1e1e24',
 		'box-shadow':
-			'.3125rem .3125rem .625rem #bebebe, -.3125rem -.3125rem .625rem #ffffff',
+			'.15rem .15rem .625rem #bebebe, -.15rem -.15rem .625rem #ffffff',
 		'raised-box-shadow':
-			'1rem 1rem 1.5rem #bebebe, -1rem -1rem 1.5rem #ffffff'
+			'1rem 1rem 1.5rem #bebebe, -1rem -1rem 1.5rem #ffffff',
+		'inset-box-shadow':
+			'inset .15rem .15rem .625rem #bebebe, inset -.15rem -.15rem .625rem #ffffff'
 	},
 	dark: {
 		background: '#1e1e24',
@@ -26,11 +28,15 @@ const themes: Record<TColorTheme, TThemeValue> = {
 		icon: '#88527f',
 		text: '#e0e0e0',
 		'box-shadow':
-			'.3125rem .3125rem .625rem #0f0f12, -.3125rem -.3125rem .625rem #2d2d36',
+			'.15rem .15rem .625rem #0f0f12, -.15rem -.15rem .625rem #2d2d36',
 		'raised-box-shadow':
-			'1rem 1rem 1.5rem #0f0f12, -1rem -1rem 1.5rem #2d2d36'
+			'1rem 1rem 1.5rem #0f0f12, -1rem -1rem 1.5rem #2d2d36',
+		'inset-box-shadow':
+			'inset .15rem .15rem .625rem #0f0f12, inset -.15rem -.15rem .625rem #2d2d36'
 	}
 };
+
+// started with .325rem box shadow, but it was too much?
 
 const removeTransitionVariables = (style: CSSStyleDeclaration) => {
 	if (!style) return;

@@ -10,7 +10,9 @@
 	gap: 1rem;
 
 	&:hover {
-		box-shadow: var(--raised-box-shadow);
+		// box-shadow: var(--raised-box-shadow);
+		box-shadow: var(--inset-box-shadow);
+		transition: inset 2s ease-in-out;
 	}
 
 	&__left {
