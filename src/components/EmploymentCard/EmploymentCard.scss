@@ -64,7 +64,7 @@
 		text-decoration: none;
 
 		&:hover > * {
-			color: black;
+			color: var(--text);
 			transition: color 0.2s ease-in-out;
 		}
 	}
