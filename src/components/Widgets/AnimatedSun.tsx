@@ -1,6 +1,11 @@
 import { motion } from 'framer-motion';
 
-const AnimatedSun = () => {
+type TAnimatedSunProps = {
+	height: number;
+	width: number;
+};
+
+const AnimatedSun = ({ height, width }: TAnimatedSunProps) => {
 	const transition = {
 		type: 'spring',
 		stiffness: 200,
@@ -22,9 +27,9 @@ const AnimatedSun = () => {
 	return (
 		<motion.svg
 			key="sun"
-			width="1em"
-			height="1em"
-			viewBox="0 0 24 24"
+			width={width}
+			height={height}
+			viewBox={`0 0 ${width} ${height}`}
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
 			whileTap={whileTap}

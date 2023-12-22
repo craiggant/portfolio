@@ -1,0 +1,24 @@
+@use '../../styles' as *;
+
+.nav {
+	&-button {
+		@include flex(row, center, center, wrap);
+		text-decoration: none;
+		gap: 1.5rem;
+		border-radius: 2rem;
+		padding: 0.25rem 1rem;
+		color: var(--icon);
+		box-shadow: var(--box-shadow);
+		transition: var(--box-shadow-transition);
+
+		&:hover {
+			// box-shadow: var(--raised-box-shadow);
+			box-shadow: var(--inset-box-shadow);
+		}
+	}
+
+	&-selected {
+		box-shadow: var(--inset-box-shadow) !important;
+		color: var(--text);
+	}
+}
