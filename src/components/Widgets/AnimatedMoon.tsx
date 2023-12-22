@@ -1,6 +1,11 @@
 import { motion } from 'framer-motion';
 
-const AnimatedMoon = () => {
+type TAnimatedMoonProps = {
+	height: number;
+	width: number;
+};
+
+const AnimatedMoon = ({ height, width }: TAnimatedMoonProps) => {
 	const transition = {
 		type: 'spring',
 		stiffness: 200,
@@ -16,9 +21,9 @@ const AnimatedMoon = () => {
 	return (
 		<motion.svg
 			xmlns="http://www.w3.org/2000/svg"
-			width="1em"
-			height="1em"
-			viewBox="0 0 50 50"
+			width={width}
+			height={height}
+			viewBox={`0 0 ${width * 2} ${height * 2}`}
 			key="moon"
 		>
 			<motion.path

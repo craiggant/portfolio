@@ -1,3 +1,5 @@
+import { Navigation } from '../../components';
+
 // styles
 import './Header.scss';
 
@@ -14,11 +16,14 @@ type THeaderProps = {
 
 const Header = ({ name, title, description }: THeaderProps) => {
 	return (
-		<header className="header">
-			<h1>{name}</h1>
-			<h2>{title}</h2>
-			<p>{description}</p>
-		</header>
+		<div className="header">
+			<header>
+				<h1>{name}</h1>
+				<h2>{title}</h2>
+				<p>{description}</p>
+			</header>
+			<Navigation />
+		</div>
 	);
 };
 
