@@ -35,12 +35,13 @@ const Homepage = () => {
 	return (
 		<main className="homepage-wrapper">
 			<div className="homepage">
-				<Header
-					name="Craig Gant"
-					title="Software Engineer"
-					description="Building beautiful and accessible web experiences"
-				/>
-
+				<div className="homepage__left">
+					<Header
+						name="Craig Gant"
+						title="Software Engineer"
+						description="Building beautiful and accessible web experiences"
+					/>
+				</div>
 				<div className="homepage__right">
 					<ColorThemeSwitch />
 					<div id="about">

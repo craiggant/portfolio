@@ -1,11 +1,10 @@
 @use '../../styles/' as *;
 
 .homepage {
-	@include flex(row, center);
+	display: flex;
 	width: 100%;
 	height: 100%;
 	gap: 2rem;
-	max-height: 100vh;
 	max-width: 80rem;
 
 	&-wrapper {
@@ -13,9 +12,20 @@
 		width: 100%;
 		height: 100%;
 		gap: 2rem;
+		padding: 0 3rem;
+	}
+
+	&__left {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 350px;
 	}
 
 	&__right {
+		margin-left: 350px; /* Same as the width of the left section */
+		width: calc(100% - 350px);
 		@include flex(column, flex-start, flex-end);
 		padding: 5rem 0;
 
