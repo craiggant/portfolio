@@ -25,6 +25,7 @@ const Homepage = () => {
 			companyLogo={e.companyLogo}
 			companyUrl={e.companyUrl}
 			startDate={e.startDate}
+			notableAchievement={e.notableAchievement}
 			endDate={e.endDate}
 			title={e.title}
 			taskDescriptions={e.taskDescriptions}
