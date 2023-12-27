@@ -4,12 +4,12 @@ const employmentHistory: TEmploymentHistory[] = [
 	{
 		company: 'Mass Virtual',
 		companyLogo: '',
-		companyUrl: '',
+		companyUrl: 'https://massvirtual.com/',
 		endDate: 'Dec 2023',
 		id: '10',
 		startDate: 'Oct 2023',
 		taskDescriptions: [
-			'Built custom web applications that supported internal business needs.'
+			'• Built custom web applications that supported internal business needs.'
 		],
 		technologies: ['TypeScript', 'React', 'Next', 'MongoDB'],
 		title: 'Web Engineer'
@@ -32,8 +32,9 @@ const employmentHistory: TEmploymentHistory[] = [
 	{
 		company: 'University of Central Florida',
 		companyLogo: '',
-		companyUrl: '',
+		companyUrl: 'https://www.ucf.edu/',
 		endDate: 'Apr 2022',
+		notableAchievement: `• Coded an application using Next.js, Express and Socket.io that combed through the academic records of all current graduate students at the university and provided administrators with suggestions (based on school standards) about which students might need to be sent letters regarding their status with the school (placed on academic probation, be reinstated, etc.). The administrators were then able to use a common dashboard (built with web sockets) to collaborate and confirm which letters should be sent. Once confirmed, they could send all letters through the application.`,
 		id: '30',
 		startDate: 'Sep 2020',
 		taskDescriptions: [
@@ -47,7 +48,7 @@ const employmentHistory: TEmploymentHistory[] = [
 	{
 		company: 'Chec/Commerce.js',
 		companyLogo: '',
-		companyUrl: '',
+		companyUrl: 'https://commercejs.com/',
 		endDate: 'Sep 2020',
 		id: '40',
 		startDate: 'Jun 2020',
