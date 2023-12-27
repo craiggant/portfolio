@@ -1,3 +1,5 @@
+import React, { useMemo } from 'react';
+
 import { TEmploymentHistory } from '../../types';
 
 // styles
@@ -13,6 +15,7 @@ const EmploymentCard = ({
 	companyUrl,
 	taskDescriptions,
 	endDate,
+	notableAchievement,
 	startDate,
 	technologies,
 	title
@@ -21,13 +24,27 @@ const EmploymentCard = ({
 		? taskDescriptions.map((desc) => <p key={desc}>{desc}</p>)
 		: null;
 
-	const tagsToRender = technologies.length
-		? technologies.map((tag) => (
-				<span className="employment-card__right-tags-wrapper" key={tag}>
-					{tag}
-				</span>
-		  ))
-		: null;
+	const tagsToRender = useMemo(() => {
+		if (!technologies.length) return null;
+		return technologies.map((tag) => (
+			<span className="employment-card__right-tags-wrapper" key={tag}>
+				{tag}
+			</span>
+		));
+	}, [technologies]);
+
+	const notableAchievementToRender = useMemo(() => {
+		if (!notableAchievement) return null;
+
+		return (
+			<div className="employment-card__right-notable-achievement">
+				<p className="employment-card__right-notable-achievement-title">
+					Notable Achievement
+				</p>
+				{notableAchievement}
+			</div>
+		);
+	}, [notableAchievement]);
 
 	return (
 		<div className="employment-card">
@@ -49,6 +66,7 @@ const EmploymentCard = ({
 				<div className="employment-card__right-description">
 					{descriptionsToRender}
 				</div>
+				{notableAchievementToRender}
 				<div className="employment-card__right-tags">
 					{tagsToRender}
 				</div>

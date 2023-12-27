@@ -3,6 +3,7 @@ export type TEmploymentHistory = {
 	companyLogo: string;
 	companyUrl: string;
 	endDate: string;
+	notableAchievement?: string;
 	id: string;
 	startDate: string;
 	taskDescriptions: string[];

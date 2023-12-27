@@ -19,11 +19,12 @@ const employmentHistory: TEmploymentHistory[] = [
 		companyLogo: '',
 		companyUrl: 'https://corporate.charter.com/',
 		endDate: 'Oct 2023',
+		notableAchievement: `• Single-handedly coded an application that takes in data from a Salesforce opportunity, transforms that data based on business logic and automatically creates multiple Jira tickets. \n • This application has saved tens of thousands of dollars for Charter, as it reduced the time sales personnel need to create these tickets from over 20 minutes to just a few seconds. Additionally, before the app, one full time employee was dedicated to the creation of these tickets. After the app, however, they were fully freed up to use their skills in other ways for the company.`,
 		id: '20',
 		startDate: 'Apr 2022',
 		taskDescriptions: [
-			'• Build accessible, scalable and secure full-stack web applications to meet a variety of business needs using React, Typescript, Node ,and Fastify.',
-			'• Architect and implement scalable database solutions for our applications. Integrate external applications and APIs (like Salesforce and Jira) into our apps.'
+			'• Built accessible, scalable and secure full-stack web applications to meet a variety of business needs using React, Typescript, Node ,and Fastify.',
+			'• Architected and implemented scalable database solutions for our applications. Integrated external applications and APIs (like Salesforce and Jira) into our apps.'
 		],
 		technologies: ['TypeScript', 'React', 'Node', 'Fastify', 'PostgreSQL'],
 		title: 'Software Engineer'
