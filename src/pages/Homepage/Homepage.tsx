@@ -46,13 +46,17 @@ const Homepage = () => {
 				<div className="homepage__right">
 					<ColorThemeSwitch />
 					<div id="about">
+						<h2 className="homepage__right-title">About</h2>
 						<About />
 					</div>
-					<div
-						className="homepage__right-experiences"
-						id="experience"
-					>
-						{cardsToDisplay}
+					<div id="experience">
+						<h2 className="homepage__right-title">Experience</h2>
+						<div className="homepage__right-experiences">
+							{cardsToDisplay}
+						</div>
+					</div>
+					<div id="projects">
+						<h2 className="homepage__right-title">Projects</h2>
 					</div>
 				</div>
 			</div>
