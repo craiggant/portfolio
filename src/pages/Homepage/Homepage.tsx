@@ -5,12 +5,13 @@ import {
 	EmploymentCard,
 	Header
 } from '../../components';
+import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 // hooks
 import { useSetColorTheme } from '../../hooks';
 
 // utils
-import { employmentHistory } from '../../utils';
+import { employmentHistory, projects } from '../../utils';
 
 // styles
 import './Homepage.scss';
@@ -30,6 +31,18 @@ const Homepage = () => {
 			title={e.title}
 			taskDescriptions={e.taskDescriptions}
 			technologies={e.technologies}
+		/>
+	));
+
+	const projectsToDisplay = projects.map((p) => (
+		<ProjectCard
+			key={p.id}
+			title={p.title}
+			description={p.description}
+			technologies={p.technologies}
+			githubUrl={p.githubUrl}
+			liveUrl={p.liveUrl}
+			image={p.image}
 		/>
 	));
 
@@ -57,6 +70,9 @@ const Homepage = () => {
 					</div>
 					<div id="projects">
 						<h2 className="homepage__right-title">Projects</h2>
+						<div className="homepage__right-experiences">
+							{projectsToDisplay}
+						</div>
 					</div>
 				</div>
 			</div>

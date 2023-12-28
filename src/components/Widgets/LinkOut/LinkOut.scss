@@ -1,0 +1,24 @@
+@use '../../../styles/' as *;
+
+.link-out {
+	@include flex(row);
+	color: var(--icon-alt);
+	text-decoration: none;
+	gap: 1px;
+
+	& svg {
+		width: 1rem;
+		height: 1rem;
+		align-self: center;
+		transition: transform 0.2s ease;
+	}
+
+	&:hover {
+		color: var(--text);
+		transition: color 0.3s ease-in-out;
+
+		& svg {
+			transform: translate(2px, -2px);
+		}
+	}
+}
