@@ -6,7 +6,7 @@ import Header from './Header/Header';
 import LinkedInIcon from './Widgets/LinkedIn';
 import NavButton from './NavButton/NavButton';
 import Navigation from './Navigation/Navigation';
-import { AnimatedMoon, AnimatedSun, GithubIcon } from './Widgets';
+import { AnimatedMoon, AnimatedSun, GithubIcon, LinkOut } from './Widgets';
 
 export {
 	About,
@@ -17,6 +17,7 @@ export {
 	Footer,
 	GithubIcon,
 	LinkedInIcon,
+	LinkOut,
 	Header,
 	NavButton,
 	Navigation
