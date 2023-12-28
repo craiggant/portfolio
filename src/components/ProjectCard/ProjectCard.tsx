@@ -35,7 +35,7 @@ const ProjectCard = ({
 				/>
 				<div className="project-card__left-links">
 					{githubUrl && <LinkOut url={githubUrl} text="Code" />}
-					{liveUrl && <LinkOut url={liveUrl} text="Deployed" />}
+					{liveUrl && <LinkOut url={liveUrl} text="Deployed site" />}
 				</div>
 			</div>
 			<div className="project-card__info">

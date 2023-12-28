@@ -53,27 +53,27 @@ const Homepage = () => {
 					<Header
 						name="Craig Gant"
 						title="Software Engineer"
-						description="Building beautiful and accessible web experiences"
+						description="Crafting beautiful and accessible web experiences"
 					/>
 				</div>
 				<div className="homepage__right">
 					<ColorThemeSwitch />
-					<div id="about">
+					<section id="about">
 						<h2 className="homepage__right-title">About</h2>
 						<About />
-					</div>
-					<div id="experience">
+					</section>
+					<section id="experience">
 						<h2 className="homepage__right-title">Experience</h2>
 						<div className="homepage__right-experiences">
 							{cardsToDisplay}
 						</div>
-					</div>
-					<div id="projects">
+					</section>
+					<section id="projects">
 						<h2 className="homepage__right-title">Projects</h2>
 						<div className="homepage__right-experiences">
 							{projectsToDisplay}
 						</div>
-					</div>
+					</section>
 				</div>
 			</div>
 		</main>
