@@ -14,6 +14,15 @@ const projects: TProject[] = [
 		image: MovieApp,
 		technologies: ['TypeScript', 'React', 'Next', 'Framer Motion'],
 		title: 'Movie Search'
+	},
+	{
+		description:
+			"This application was built to showcase my experience and capabilities. I thought it would be fun to build out a portfolio with a semi-neumorphic design and that has a toggle for dark/light mode. I had a really fun time figuring out a custom theming approach that uses custom css variables along with React's context API.",
+		githubUrl: 'https://github.com/craiggant/portfolio',
+		id: '2',
+		image: MovieApp,
+		technologies: ['TypeScript', 'React', 'Framer Motion'],
+		title: 'Portfolio'
 	}
 ];
 
