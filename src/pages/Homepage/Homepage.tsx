@@ -69,7 +69,9 @@ const Homepage = () => {
 						</div>
 					</section>
 					<section id="projects">
-						<h2 className="homepage__right-title">Projects</h2>
+						<h2 className="homepage__right-title">
+							Sample Projects
+						</h2>
 						<div className="homepage__right-experiences">
 							{projectsToDisplay}
 						</div>
