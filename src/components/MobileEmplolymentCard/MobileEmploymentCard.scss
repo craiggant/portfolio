@@ -1,0 +1,80 @@
+@use '../../styles/' as *;
+
+.mobile-employment-card {
+	@include flex(column);
+	width: 100%;
+	border-radius: 1rem;
+	padding: 1.5rem;
+	box-shadow: var(--box-shadow);
+	transition: var(--box-shadow-transition);
+
+	&:hover {
+		box-shadow: var(--inset-box-shadow);
+		transition: inset 2s ease-in-out;
+	}
+
+	&__top {
+		@include flex(column);
+		width: 100%;
+		color: var(--icon-alt);
+
+		& span {
+			font-weight: bold;
+			color: var(--icon-alt);
+			// offsets the font-size of the title text in __right-title
+			margin-top: 0.17rem;
+		}
+
+		&-title {
+			font-size: 1.17rem;
+			color: var(--text);
+			font-weight: bold;
+		}
+	}
+
+	&__bottom {
+		@include flex(column, space-between, flex-start);
+		width: 100%;
+		position: relative;
+
+		&-description {
+			color: var(--text);
+		}
+
+		&-notable-achievement {
+			color: var(--text);
+			white-space: pre-wrap;
+
+			&-title {
+				font-weight: bold;
+				margin-top: 1rem;
+			}
+		}
+
+		&-tags {
+			@include flex(row, flex-start, center, wrap);
+			width: 100%;
+			gap: 0.5rem;
+			margin-top: 1rem;
+			color: var(--icon-alt);
+
+			&-wrapper {
+				@include flex(row, center, center, wrap);
+				gap: 0.5rem;
+				border-radius: 2rem;
+				padding: 0.25rem 0.5rem;
+				border: var(--icon-alt) 2px solid;
+				color: var(--icon-alt);
+			}
+		}
+	}
+
+	&__link {
+		text-decoration: none;
+
+		&:hover > * {
+			color: var(--text);
+			transition: color 0.2s ease-in-out;
+		}
+	}
+}

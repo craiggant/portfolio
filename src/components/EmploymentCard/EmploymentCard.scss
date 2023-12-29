@@ -10,7 +10,6 @@
 	gap: 1rem;
 
 	&:hover {
-		// box-shadow: var(--raised-box-shadow);
 		box-shadow: var(--inset-box-shadow);
 		transition: inset 2s ease-in-out;
 	}
@@ -31,6 +30,7 @@
 	&__right {
 		@include flex(column, space-between, flex-start);
 		width: 100%;
+		position: relative;
 
 		&-title {
 			font-size: 1.17rem;
@@ -40,6 +40,16 @@
 
 		&-description {
 			color: var(--text);
+		}
+
+		&-notable-achievement {
+			color: var(--text);
+			white-space: pre-wrap;
+
+			&-title {
+				font-weight: bold;
+				margin-top: 1rem;
+			}
 		}
 
 		&-tags {
