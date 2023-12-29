@@ -1,4 +1,4 @@
-import { Footer, Navigation } from '../../components';
+import { ColorThemeSwitch, Footer, Navigation } from '../../components';
 
 // styles
 import './Header.scss';
@@ -22,6 +22,9 @@ const Header = ({ name, title, description }: THeaderProps) => {
 				<h2>{title}</h2>
 				<p>{description}</p>
 				<Navigation />
+				<div>
+					<ColorThemeSwitch />
+				</div>
 			</header>
 			<Footer />
 		</div>
