@@ -15,11 +15,11 @@ const themes: Record<TColorTheme, TThemeValue> = {
 		icon: '#5C7A95', // Deeper shade of blue-gray
 		text: '#333333', // Dark gray
 		'box-shadow':
-			'.15rem .15rem .625rem #A8B9CA, -.15rem -.15rem .625rem #E4F0FA',
+			'.15rem .15rem .625rem #9AAFC1, -.15rem -.15rem .625rem #E4F0FA',
 		'raised-box-shadow':
-			'1rem 1rem 1.5rem #A8B9CA, -1rem -1rem 1.5rem #E4F0FA',
+			'1rem 1rem 1.5rem #9AAFC1, -1rem -1rem 1.5rem #E4F0FA',
 		'inset-box-shadow':
-			'inset .15rem .15rem .625rem #A8B9CA, inset -.15rem -.15rem .625rem #E4F0FA'
+			'inset .15rem .15rem .625rem #9AAFC1, inset -.15rem -.15rem .625rem #E4F0FA'
 	},
 	dark: {
 		background: '#2C3E50', // Dark slate
