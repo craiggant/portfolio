@@ -3,13 +3,13 @@ import React, { useMemo } from 'react';
 import { TEmploymentHistory } from '../../types';
 
 // styles
-import './EmploymentCard.scss';
+import './MobileEmploymentCard.scss';
 
 type TEmploymentCardProps = Omit<TEmploymentHistory, 'id'>;
 
 /** Card that displays info, desc, and tags and raises on hover */
 
-const EmploymentCard = ({
+const MobileEmploymentCard = ({
 	company,
 	companyUrl,
 	taskDescriptions,
@@ -26,7 +26,10 @@ const EmploymentCard = ({
 	const tagsToRender = useMemo(() => {
 		if (!technologies.length) return null;
 		return technologies.map((tag) => (
-			<span className="employment-card__right-tags-wrapper" key={tag}>
+			<span
+				className="mobile-employment-card__bottom-tags-wrapper"
+				key={tag}
+			>
 				{tag}
 			</span>
 		));
@@ -36,8 +39,8 @@ const EmploymentCard = ({
 		if (!notableAchievement) return null;
 
 		return (
-			<div className="employment-card__right-notable-achievement">
-				<p className="employment-card__right-notable-achievement-title">
+			<div className="mobile-employment-card__bottom-notable-achievement">
+				<p className="mobile-employment-card__bottom-notable-achievement-title">
 					Notable Achievement
 				</p>
 				{notableAchievement}
@@ -46,11 +49,12 @@ const EmploymentCard = ({
 	}, [notableAchievement]);
 
 	return (
-		<div className="employment-card">
-			<div className="employment-card__left">
+		<div className="mobile-employment-card">
+			<div className="mobile-employment-card__top">
+				<div className="mobile-employment-card__top-title">{title}</div>
 				<a
 					href={companyUrl}
-					className="employment-card__link"
+					className="mobile-employment-card__link"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
@@ -60,13 +64,12 @@ const EmploymentCard = ({
 					{startDate} - {endDate}
 				</div>
 			</div>
-			<div className="employment-card__right">
-				<div className="employment-card__right-title">{title}</div>
-				<div className="employment-card__right-description">
+			<div className="mobile-employment-card__bottom">
+				<div className="mobile-employment-card__bottom-description">
 					{descriptionsToRender}
 				</div>
 				{notableAchievementToRender}
-				<div className="employment-card__right-tags">
+				<div className="mobile-employment-card__bottom-tags">
 					{tagsToRender}
 				</div>
 			</div>
@@ -74,4 +77,4 @@ const EmploymentCard = ({
 	);
 };
 
-export default EmploymentCard;
+export default MobileEmploymentCard;

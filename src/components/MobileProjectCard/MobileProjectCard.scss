@@ -1,0 +1,58 @@
+@use '../../styles/' as *;
+
+.mobile-project-card {
+	@include flex(column);
+	width: 100%;
+	border-radius: 1rem;
+	padding: 1.5rem;
+	box-shadow: var(--box-shadow);
+	transition: var(--box-shadow-transition);
+	gap: 1rem;
+
+	&:hover {
+		box-shadow: var(--inset-box-shadow);
+		transition: inset 2s ease-in-out;
+	}
+
+	&__visual {
+		@include flex(column, space-between);
+		gap: 1rem;
+
+		&-links {
+			@include flex(row, space-between);
+			width: 100%;
+		}
+
+		&-image {
+			max-width: 100%;
+			border: 1px solid var(--icon);
+		}
+	}
+
+	&__title {
+		font-size: 1.17rem;
+		color: var(--text);
+		font-weight: bold;
+	}
+
+	&__description {
+		color: var(--text);
+		white-space: pre-wrap;
+	}
+
+	&__technologies {
+		@include flex(row, flex-start, center, wrap);
+		gap: 0.5rem;
+		margin-top: 1rem;
+		color: var(--icon-alt);
+
+		&-tag {
+			@include flex(row, center, center, wrap);
+			gap: 0.5rem;
+			border-radius: 2rem;
+			padding: 0.25rem 0.5rem;
+			border: var(--icon-alt) 2px solid;
+			color: var(--icon-alt);
+		}
+	}
+}

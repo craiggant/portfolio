@@ -1,5 +1,5 @@
 import { TColorTheme } from '../types';
-
+// icon: '#fc5130',
 type TThemeValue = {
 	background: string;
 	border: string;
@@ -10,29 +10,28 @@ type TThemeValue = {
 
 const themes: Record<TColorTheme, TThemeValue> = {
 	light: {
-		background: '#e0e0e0',
-		border: '#fc5130',
-		// icon: '#fc5130',
-		icon: '#88527f',
-		text: '#1e1e24',
+		background: '#CADBE9', // Soft blue-gray
+		border: '#FF6B6B', // Vibrant coral
+		icon: '#5C7A95', // Deeper shade of blue-gray
+		text: '#333333', // Dark gray
 		'box-shadow':
-			'.15rem .15rem .625rem #bebebe, -.15rem -.15rem .625rem #ffffff',
+			'.15rem .15rem .625rem #9AAFC1, -.15rem -.15rem .625rem #E4F0FA',
 		'raised-box-shadow':
-			'1rem 1rem 1.5rem #bebebe, -1rem -1rem 1.5rem #ffffff',
+			'1rem 1rem 1.5rem #9AAFC1, -1rem -1rem 1.5rem #E4F0FA',
 		'inset-box-shadow':
-			'inset .15rem .15rem .625rem #bebebe, inset -.15rem -.15rem .625rem #ffffff'
+			'inset .15rem .15rem .625rem #9AAFC1, inset -.15rem -.15rem .625rem #E4F0FA'
 	},
 	dark: {
-		background: '#1e1e24',
-		border: '#88527f',
-		icon: '#88527f',
-		text: '#e0e0e0',
+		background: '#2C3E50', // Dark slate
+		border: '#B38E8E', // Muted coral
+		icon: '#405C73', // Lighter shade of dark slate
+		text: '#D0D3D4', // Light gray
 		'box-shadow':
-			'.15rem .15rem .625rem #0f0f12, -.15rem -.15rem .625rem #2d2d36',
+			'.15rem .15rem .625rem #1B2838, -.15rem -.15rem .625rem #3D5668',
 		'raised-box-shadow':
-			'1rem 1rem 1.5rem #0f0f12, -1rem -1rem 1.5rem #2d2d36',
+			'1rem 1rem 1.5rem #1B2838, -1rem -1rem 1.5rem #3D5668',
 		'inset-box-shadow':
-			'inset .15rem .15rem .625rem #0f0f12, inset -.15rem -.15rem .625rem #2d2d36'
+			'inset .15rem .15rem .625rem #1B2838, inset -.15rem -.15rem .625rem #3D5668'
 	}
 };
 

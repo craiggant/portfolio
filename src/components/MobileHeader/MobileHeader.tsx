@@ -1,7 +1,7 @@
-import { ColorThemeSwitch, Footer, Navigation } from '../../components';
+import { ColorThemeSwitch, Footer } from '../../components';
 
 // styles
-import './Header.scss';
+import './MobileHeader.scss';
 
 type THeaderProps = {
 	/** Name */
@@ -14,21 +14,18 @@ type THeaderProps = {
 
 /** Header that displays key details about the developer */
 
-const Header = ({ name, title, description }: THeaderProps) => {
+const MobileHeader = ({ name, title, description }: THeaderProps) => {
 	return (
-		<div className="header">
+		<div className="mobile-header">
+			<ColorThemeSwitch />
 			<header>
 				<h1>{name}</h1>
 				<h2>{title}</h2>
 				<p>{description}</p>
-				<Navigation />
-				<div>
-					<ColorThemeSwitch />
-				</div>
 			</header>
 			<Footer />
 		</div>
 	);
 };
 
-export default Header;
+export default MobileHeader;
