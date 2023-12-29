@@ -23,7 +23,6 @@ const Homepage = () => {
 		<EmploymentCard
 			key={e.id}
 			company={e.company}
-			companyLogo={e.companyLogo}
 			companyUrl={e.companyUrl}
 			startDate={e.startDate}
 			notableAchievement={e.notableAchievement}
@@ -57,7 +56,6 @@ const Homepage = () => {
 					/>
 				</div>
 				<div className="homepage__right">
-					<ColorThemeSwitch />
 					<section id="about">
 						<h2 className="homepage__right-title">About</h2>
 						<About />
