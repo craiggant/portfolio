@@ -1,10 +1,5 @@
 // components
-import {
-	About,
-	ColorThemeSwitch,
-	EmploymentCard,
-	Header
-} from '../../components';
+import { About, EmploymentCard, Header } from '../../components';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 // hooks
