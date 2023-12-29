@@ -1,22 +1,21 @@
 @use '../../styles/' as *;
 
-.employment-card {
-	@include flex(row);
+.mobile-employment-card {
+	@include flex(column);
 	width: 100%;
 	border-radius: 1rem;
 	padding: 1.5rem;
 	box-shadow: var(--box-shadow);
 	transition: var(--box-shadow-transition);
-	gap: 1rem;
 
 	&:hover {
 		box-shadow: var(--inset-box-shadow);
 		transition: inset 2s ease-in-out;
 	}
 
-	&__left {
-		@include flex(column, center, flex-start);
-		width: 13rem;
+	&__top {
+		@include flex(column);
+		width: 100%;
 		color: var(--icon-alt);
 
 		& span {
@@ -25,18 +24,18 @@
 			// offsets the font-size of the title text in __right-title
 			margin-top: 0.17rem;
 		}
-	}
-
-	&__right {
-		@include flex(column, space-between, flex-start);
-		width: 100%;
-		position: relative;
 
 		&-title {
 			font-size: 1.17rem;
 			color: var(--text);
 			font-weight: bold;
 		}
+	}
+
+	&__bottom {
+		@include flex(column, space-between, flex-start);
+		width: 100%;
+		position: relative;
 
 		&-description {
 			color: var(--text);

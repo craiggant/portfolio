@@ -1,0 +1,21 @@
+@use '../../styles' as *;
+
+.mobile-header {
+	@include flex(column);
+	color: var(--text);
+	font-size: 1.2rem;
+	line-height: 1.5;
+	width: 100%;
+	height: 100%;
+
+	& .color-theme-switch {
+		display: flex;
+		align-self: flex-end;
+	}
+
+	& .footer {
+		@include flex(row);
+		width: 100%;
+		margin: 1rem 0;
+	}
+}
