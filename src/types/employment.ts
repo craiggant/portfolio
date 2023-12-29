@@ -1,6 +1,5 @@
 export type TEmploymentHistory = {
 	company: string;
-	companyLogo: string;
 	companyUrl: string;
 	endDate: string;
 	notableAchievement?: string;
