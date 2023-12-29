@@ -3,7 +3,6 @@ import { TEmploymentHistory } from '../types';
 const employmentHistory: TEmploymentHistory[] = [
 	{
 		company: 'Mass Virtual',
-		companyLogo: '',
 		companyUrl: 'https://massvirtual.com/',
 		endDate: 'Dec 2023',
 		id: '10',
@@ -16,7 +15,6 @@ const employmentHistory: TEmploymentHistory[] = [
 	},
 	{
 		company: 'Charter Communications',
-		companyLogo: '',
 		companyUrl: 'https://corporate.charter.com/',
 		endDate: 'Oct 2023',
 		notableAchievement: `- Single-handedly coded an application that takes in data from a Salesforce opportunity, transforms that data based on business logic and automatically creates multiple Jira tickets. \n - This application has saved tens of thousands of dollars for Charter, as it reduced the time sales personnel need to create these tickets from over 20 minutes to just a few seconds. Additionally, before the app, one full time employee was dedicated to the creation of these tickets. After the app, however, they were fully freed up to use their skills in other ways for the company.`,
@@ -31,7 +29,6 @@ const employmentHistory: TEmploymentHistory[] = [
 	},
 	{
 		company: 'University of Central Florida',
-		companyLogo: '',
 		companyUrl: 'https://www.ucf.edu/',
 		endDate: 'Apr 2022',
 		notableAchievement: `- Coded an application using Next.js, Express and Socket.io that combed through the academic records of all current graduate students at the university and provided administrators with suggestions (based on school standards) about which students might need to be sent letters regarding their status with the school (placed on academic probation, be reinstated, etc.). The administrators were then able to use a common dashboard (built with web sockets) to collaborate and confirm which letters should be sent. Once confirmed, they could send all letters through the application.`,
@@ -47,7 +44,6 @@ const employmentHistory: TEmploymentHistory[] = [
 	},
 	{
 		company: 'Chec/Commerce.js',
-		companyLogo: '',
 		companyUrl: 'https://commercejs.com/',
 		endDate: 'Sep 2020',
 		id: '40',
