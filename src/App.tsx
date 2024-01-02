@@ -8,9 +8,9 @@ import { useSize } from './hooks';
 import { Homepage, MobileHomepage } from './pages';
 
 const App = () => {
-	const { isMobile } = useSize();
+	const { isSmallScreen } = useSize();
 
-	if (isMobile) {
+	if (isSmallScreen) {
 		return (
 			<>
 				<ColorThemeProvider>

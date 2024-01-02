@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 
 const useSize = () => {
-	const [isMobile, setIsMobile] = useState(false);
-	const [isLargeMobile, setIsLargeMobile] = useState(false);
+	const [isSmallScreen, setIsSmallScreen] = useState(false);
+	const [isMediumScreen, setIsMediumScreen] = useState(false);
 
 	useEffect(() => {
 		const handleResize = () => {
-			setIsMobile(window.innerWidth <= 950);
-			setIsLargeMobile(
+			setIsSmallScreen(window.innerWidth <= 950);
+			setIsMediumScreen(
 				window.innerWidth >= 700 && window.innerWidth <= 950
 			);
 		};
@@ -20,7 +20,7 @@ const useSize = () => {
 		};
 	}, []);
 
-	return { isMobile, isLargeMobile };
+	return { isSmallScreen, isMediumScreen };
 };
 
 export default useSize;
