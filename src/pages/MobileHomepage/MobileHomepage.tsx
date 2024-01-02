@@ -21,10 +21,10 @@ import './MobileHomepage.scss';
 
 const MobileHomepage = () => {
 	useSetColorTheme();
-	const { isLargeMobile } = useSize();
+	const { isMediumScreen } = useSize();
 
 	const cardsToDisplay = useMemo(() => {
-		if (isLargeMobile) {
+		if (isMediumScreen) {
 			return employmentHistory.map((e) => (
 				<EmploymentCard
 					key={e.id}
@@ -53,10 +53,10 @@ const MobileHomepage = () => {
 				technologies={e.technologies}
 			/>
 		));
-	}, [isLargeMobile]);
+	}, [isMediumScreen]);
 
 	const projectsToDisplay = useMemo(() => {
-		if (isLargeMobile) {
+		if (isMediumScreen) {
 			return projects.map((p) => (
 				<ProjectCard
 					key={p.id}
@@ -81,7 +81,7 @@ const MobileHomepage = () => {
 				image={p.image}
 			/>
 		));
-	}, [isLargeMobile]);
+	}, [isMediumScreen]);
 
 	return (
 		<main className="mobile-homepage">
