@@ -1,0 +1,12 @@
+.canvas {
+	touch-action: none;
+}
+
+.computerScreen .homepage-wrapper {
+	width: 1024px;
+	height: 670px;
+	border: none;
+	border-radius: 20px;
+	overflow: auto;
+	background: var(--background);
+}

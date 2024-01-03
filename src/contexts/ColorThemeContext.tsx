@@ -18,6 +18,7 @@ export const ColorThemeProvider = ({ children }: TChildren) => {
 	const setColorTheme = (theme: TColorTheme) => {
 		setTheme(theme);
 		// persist setting to localStorage
+		console.log('theme', theme);
 		localStorage.setItem('color-theme', theme);
 	};
 

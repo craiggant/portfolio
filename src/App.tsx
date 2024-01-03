@@ -1,3 +1,6 @@
+// components
+import { ThreeCanvas } from './components';
+
 // contexts
 import { ColorThemeProvider } from './contexts';
 
@@ -23,7 +26,8 @@ const App = () => {
 	return (
 		<>
 			<ColorThemeProvider>
-				<Homepage />
+				{/* <Homepage /> */}
+				<ThreeCanvas />
 			</ColorThemeProvider>
 		</>
 	);
