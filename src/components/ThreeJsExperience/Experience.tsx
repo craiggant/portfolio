@@ -1,12 +1,6 @@
 // packages
-import React, {
-	useCallback,
-	useEffect,
-	useMemo,
-	useRef,
-	useState
-} from 'react';
-import { Vector3, useFrame } from '@react-three/fiber';
+import React, { useCallback, useRef, useState } from 'react';
+import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import {
 	ContactShadows,
@@ -16,7 +10,6 @@ import {
 	useGLTF
 } from '@react-three/drei';
 import { useResize } from '../../hooks';
-import { is } from '@react-three/fiber/dist/declarations/src/core/utils';
 
 const positionVector = new THREE.Vector3();
 const zoomedInVector = new THREE.Vector3(0, 0.7, 0);
@@ -34,20 +27,47 @@ export default function Experience() {
 	const lerpFactor = 0.04;
 
 	// sets camera position based on screen size
-	const setVector = useCallback((positionVector: Vector3) => {
-		if (window.innerWidth > 1484) return positionVector.set(0, 1, 1.5);
-		if (window.innerWidth > 1130) return positionVector.set(0, 1.3, 2.3);
-		return positionVector.set(0, 1.5, 3);
+	const setZoomedInVector = useCallback(() => {
+		const { innerWidth: width, innerHeight: height } = window;
+		const [xLarge, large, med, small] = [1484, 1130, 1024, 956];
+
+		// for landscape
+		if (screen.orientation.type.includes('landscape')) {
+			if (width > xLarge) return positionVector.set(0, 1, 1.5);
+			if (width > large) return positionVector.set(0, 1.3, 2.3);
+			return positionVector.set(0, 1.5, 3);
+		}
+		// for portrait
+		if (height > xLarge) return positionVector.set(0, 1.5, 5);
+		if (height > large) {
+			if (width > 956) return positionVector.set(0, 1.5, 4);
+			return positionVector.set(0, 1.5, 5);
+		}
+		if (height < large) {
+			if (width > large) return positionVector.set(0, 1.3, 2.3);
+			if (width > med) return positionVector.set(0, 1.5, 3);
+			if (width > small) return positionVector.set(0, 1.5, 3);
+			return positionVector.set(0, 1.5, 5);
+		}
+	}, []);
+
+	const setZoomedOutVector = useCallback(() => {
+		const { screen, innerHeight: height } = window;
+		if (screen.orientation.type.includes('landscape'))
+			return positionVector.set(-3, 1.5, 4);
+		if (height > 1300) return positionVector.set(-4, 1.5, 6);
+		if (height > 1289) return positionVector.set(-4, 1.5, 6);
+		return positionVector.set(-3, 1.5, 4);
 	}, []);
 
 	useFrame(({ camera }) => {
 		if (isZoomed) {
-			camera.position.lerp(setVector(positionVector), lerpFactor);
+			camera.position.lerp(setZoomedInVector(), lerpFactor);
 			camera.lookAt(zoomedInVector);
 			camera.updateProjectionMatrix();
 		} else {
 			camera.lookAt(zoomedOutVector);
-			camera.position.lerp(positionVector.set(-3, 1.5, 4), lerpFactor);
+			camera.position.lerp(setZoomedOutVector(), lerpFactor);
 			camera.updateProjectionMatrix();
 		}
 		return null;
@@ -111,5 +131,3 @@ export default function Experience() {
 		</>
 	);
 }
-
-// TODO: add smaller screen with normal HomePage
