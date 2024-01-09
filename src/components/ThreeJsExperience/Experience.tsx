@@ -47,8 +47,8 @@ export default function Experience() {
 			if (width > large) return positionVector.set(0, 1.3, 2.3);
 			if (width > med) return positionVector.set(0, 1.5, 3);
 			if (width > small) return positionVector.set(0, 1.5, 3);
-			return positionVector.set(0, 1.5, 5);
 		}
+		return positionVector.set(0, 1.5, 5);
 	}, []);
 
 	const setZoomedOutVector = useCallback(() => {
