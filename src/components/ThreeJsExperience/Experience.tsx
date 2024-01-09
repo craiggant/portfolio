@@ -1,5 +1,7 @@
 // packages
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
+import { useFrame } from '@react-three/fiber';
+import * as THREE from 'three';
 import {
 	ContactShadows,
 	Environment,
@@ -12,8 +14,6 @@ import {
 // hooks
 import { useToggleColorTheme } from '../../hooks';
 
-import { Homepage } from '../../pages';
-
 const findBackgroundColor = (colorTheme: string) =>
 	colorTheme === 'light' ? '#fff' : '#241a1a';
 
@@ -23,8 +23,41 @@ const findReflectionColor = (colorTheme: string) =>
 const findFontColor = (colorTheme: string) =>
 	colorTheme === 'light' ? '#000' : '#fff';
 
+const positionVector = new THREE.Vector3();
+const zoomedInVector = new THREE.Vector3(0, 0.7, 0);
+const zoomedOutVector = new THREE.Vector3(0, 0, -0.5);
+
 export default function Experience() {
+	const [isZoomed, setIsZoomed] = useState(false);
+
 	const { colorTheme } = useToggleColorTheme();
+
+	const computerRef = useRef<any>(null);
+
+	const computer = useGLTF('src/assets/models/model.gltf');
+
+	const lerpFactor = 0.04;
+
+	useFrame(({ camera }) => {
+		if (isZoomed) {
+			const lookAtZoomedPosition = zoomedInVector
+				.clone()
+				.lerp(zoomedOutVector, lerpFactor);
+
+			camera.position.lerp(positionVector.set(0, 1, 1.5), lerpFactor);
+
+			camera.lookAt(lookAtZoomedPosition);
+			camera.updateProjectionMatrix();
+		} else {
+			const lookAtPosition = zoomedOutVector
+				.clone()
+				.lerp(zoomedInVector, lerpFactor);
+			camera.lookAt(lookAtPosition);
+			camera.position.lerp(positionVector.set(-3, 1.5, 4), lerpFactor);
+			camera.updateProjectionMatrix();
+		}
+		return null;
+	});
 
 	const { backgroundColor, reflectionColor, fontColor } = useMemo(() => {
 		return {
@@ -34,18 +67,23 @@ export default function Experience() {
 		};
 	}, [colorTheme]);
 
-	const computer = useGLTF('src/assets/models/model.gltf');
-
 	return (
 		<>
 			<color args={[backgroundColor]} attach="background" />
 			<Environment preset="city" />
+			<Html wrapperClass="zoom-in-out">
+				<button
+					className="zoom-in-out__btn"
+					onClick={() => setIsZoomed(!isZoomed)}
+				>
+					{isZoomed ? 'Zoom Out' : 'Zoom In'}
+				</button>
+			</Html>
 			<PresentationControls
 				azimuth={[-1, 0.75]}
 				config={{ mass: 2, tension: 400 }}
 				global
 				polar={[-0.4, 0.2]}
-				rotation={[0.13, 0.1, 0]}
 				snap={{ mass: 4, tension: 400 }}
 			>
 				<rectAreaLight
@@ -56,17 +94,12 @@ export default function Experience() {
 					rotation={[-0.1, Math.PI, 0]}
 					position={[0, 0.55, -1.15]}
 				/>
-				<Text
-					fontSize={1}
-					position={[2, 0.75, 0.75]}
-					rotation-y={-1.25}
-					maxWidth={2}
-					textAlign="center"
-					color={fontColor}
+
+				<primitive
+					object={computer.scene}
+					position-y={-1.2}
+					ref={computerRef}
 				>
-					Craig Gant
-				</Text>
-				<primitive object={computer.scene} position-y={-1.2}>
 					<Html
 						distanceFactor={1.17}
 						transform
@@ -74,7 +107,7 @@ export default function Experience() {
 						rotation-x={-0.256}
 						wrapperClass="computerScreen"
 					>
-						<Homepage />
+						<iframe src="https://www.craiggant.com" />
 					</Html>
 				</primitive>
 			</PresentationControls>
@@ -87,3 +120,5 @@ export default function Experience() {
 		</>
 	);
 }
+
+// TODO: add smaller screen with normal HomePage
