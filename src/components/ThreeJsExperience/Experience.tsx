@@ -20,7 +20,7 @@ export default function Experience() {
 
 	const computerRef = useRef<any>(null);
 
-	const computer = useGLTF('src/assets/models/model.gltf');
+	const computer = useGLTF('../models/model.gltf');
 
 	const { isResizing } = useResize();
 
@@ -82,7 +82,7 @@ export default function Experience() {
 			rotation-x={-0.256}
 			wrapperClass="computerScreen"
 		>
-			<iframe src="https://craiggant-portfolio.vercel.app/" />
+			<iframe src="https://craiggant-portfolio.com" />
 		</Html>
 	);
 
