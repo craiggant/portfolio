@@ -23,7 +23,7 @@ const App = () => {
 		);
 	}
 
-	if (window.location.hostname.includes('craiggant-portfolio')) {
+	if (window.location.hostname.includes('portfolio')) {
 		return (
 			<>
 				<ColorThemeProvider>
