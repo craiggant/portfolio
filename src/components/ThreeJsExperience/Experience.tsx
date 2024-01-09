@@ -20,7 +20,7 @@ export default function Experience() {
 
 	const computerRef = useRef<any>(null);
 
-	const computer = useGLTF('src/assets/models/model.gltf');
+	const computer = useGLTF('../models/model.gltf');
 
 	const { isResizing } = useResize();
 
