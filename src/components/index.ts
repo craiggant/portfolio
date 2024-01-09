@@ -10,6 +10,7 @@ import MobileProjectCard from './MobileProjectCard/MobileProjectCard';
 import NavButton from './NavButton/NavButton';
 import Navigation from './Navigation/Navigation';
 import ProjectCard from './ProjectCard/ProjectCard';
+import ThreeCanvas from './ThreeJsExperience/Canvas';
 import { AnimatedMoon, AnimatedSun, GithubIcon, LinkOut } from './Widgets';
 
 export {
@@ -28,5 +29,6 @@ export {
 	MobileProjectCard,
 	NavButton,
 	Navigation,
-	ProjectCard
+	ProjectCard,
+	ThreeCanvas
 };

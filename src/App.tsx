@@ -1,3 +1,6 @@
+// components
+import { ThreeCanvas } from './components';
+
 // contexts
 import { ColorThemeProvider } from './contexts';
 
@@ -20,10 +23,20 @@ const App = () => {
 		);
 	}
 
+	if (window.location.hostname.includes('craiggant-portfolio')) {
+		return (
+			<>
+				<ColorThemeProvider>
+					<Homepage />
+				</ColorThemeProvider>
+			</>
+		);
+	}
+
 	return (
 		<>
 			<ColorThemeProvider>
-				<Homepage />
+				<ThreeCanvas />
 			</ColorThemeProvider>
 		</>
 	);

@@ -47,7 +47,7 @@ const Homepage = () => {
 					<Header
 						name="Craig Gant"
 						title="Software Engineer"
-						description="Crafting beautiful and accessible web experiences"
+						description="Crafting beautiful web experiences"
 					/>
 				</div>
 				<div className="homepage__right">
