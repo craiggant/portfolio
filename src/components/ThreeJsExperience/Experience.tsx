@@ -82,7 +82,7 @@ export default function Experience() {
 			rotation-x={-0.256}
 			wrapperClass="computerScreen"
 		>
-			<iframe src="https://craiggant-portfolio.vercel.app/" />
+			<iframe src="https://craiggant-portfolio.com" />
 		</Html>
 	);
 
