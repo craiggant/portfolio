@@ -1,12 +1,46 @@
 .canvas {
+	position: relative;
 	touch-action: none;
 }
 
-.computerScreen .homepage-wrapper {
-	width: 1024px;
-	height: 670px;
-	border: none;
-	border-radius: 20px;
-	overflow: auto;
-	background: var(--background);
+.zoom-in-out {
+	transform: none !important;
+
+	&__btn {
+		border: 1px solid transparent;
+		border-radius: 31.25rem;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 0.9rem;
+		font-weight: 700;
+		height: 3rem;
+		letter-spacing: 0.125rem;
+		margin: 1rem;
+		min-width: 10rem;
+		padding: 1rem 0.75rem 1.1rem;
+		text-align: center;
+		text-transform: uppercase;
+		transition-property: background-color, border-color, color, box-shadow,
+			filter;
+		transition-duration: 0.3s;
+		color: #616467;
+		box-shadow: inset 0 0 0 2px #616467;
+		background-color: transparent;
+
+		&:hover {
+			color: #fff;
+			background-color: #616467;
+		}
+	}
+}
+
+.computerScreen {
+	& iframe {
+		width: 1024px;
+		height: 670px;
+		border: none;
+		border-radius: 20px;
+		overflow: auto;
+		background: var(--background);
+	}
 }
