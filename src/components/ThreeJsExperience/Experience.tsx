@@ -1,27 +1,22 @@
 // packages
-import React, { useMemo, useRef, useState } from 'react';
-import { useFrame } from '@react-three/fiber';
+import React, {
+	useCallback,
+	useEffect,
+	useMemo,
+	useRef,
+	useState
+} from 'react';
+import { Vector3, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import {
 	ContactShadows,
 	Environment,
 	Html,
 	PresentationControls,
-	Text,
 	useGLTF
 } from '@react-three/drei';
-
-// hooks
-import { useToggleColorTheme } from '../../hooks';
-
-const findBackgroundColor = (colorTheme: string) =>
-	colorTheme === 'light' ? '#fff' : '#241a1a';
-
-const findReflectionColor = (colorTheme: string) =>
-	colorTheme === 'light' ? '#fff' : '#241a1a';
-
-const findFontColor = (colorTheme: string) =>
-	colorTheme === 'light' ? '#000' : '#fff';
+import { useResize } from '../../hooks';
+import { is } from '@react-three/fiber/dist/declarations/src/core/utils';
 
 const positionVector = new THREE.Vector3();
 const zoomedInVector = new THREE.Vector3(0, 0.7, 0);
@@ -30,46 +25,50 @@ const zoomedOutVector = new THREE.Vector3(0, 0, -0.5);
 export default function Experience() {
 	const [isZoomed, setIsZoomed] = useState(false);
 
-	const { colorTheme } = useToggleColorTheme();
-
 	const computerRef = useRef<any>(null);
 
 	const computer = useGLTF('src/assets/models/model.gltf');
 
+	const { isResizing } = useResize();
+
 	const lerpFactor = 0.04;
+
+	// sets camera position based on screen size
+	const setVector = useCallback((positionVector: Vector3) => {
+		if (window.innerWidth > 1484) return positionVector.set(0, 1, 1.5);
+		if (window.innerWidth > 1130) return positionVector.set(0, 1.3, 2.3);
+		return positionVector.set(0, 1.5, 3);
+	}, []);
 
 	useFrame(({ camera }) => {
 		if (isZoomed) {
-			const lookAtZoomedPosition = zoomedInVector
-				.clone()
-				.lerp(zoomedOutVector, lerpFactor);
-
-			camera.position.lerp(positionVector.set(0, 1, 1.5), lerpFactor);
-
-			camera.lookAt(lookAtZoomedPosition);
+			camera.position.lerp(setVector(positionVector), lerpFactor);
+			camera.lookAt(zoomedInVector);
 			camera.updateProjectionMatrix();
 		} else {
-			const lookAtPosition = zoomedOutVector
-				.clone()
-				.lerp(zoomedInVector, lerpFactor);
-			camera.lookAt(lookAtPosition);
+			camera.lookAt(zoomedOutVector);
 			camera.position.lerp(positionVector.set(-3, 1.5, 4), lerpFactor);
 			camera.updateProjectionMatrix();
 		}
 		return null;
 	});
 
-	const { backgroundColor, reflectionColor, fontColor } = useMemo(() => {
-		return {
-			backgroundColor: findBackgroundColor(colorTheme ?? 'light'),
-			reflectionColor: findReflectionColor(colorTheme ?? 'light'),
-			fontColor: findFontColor(colorTheme ?? 'light')
-		};
-	}, [colorTheme]);
+	// conditionally rendering prevents visual issues on resize
+	const screenContent = isResizing ? null : (
+		<Html
+			distanceFactor={1.17}
+			transform
+			position={[0, 1.56, -1.4]}
+			rotation-x={-0.256}
+			wrapperClass="computerScreen"
+		>
+			<iframe src="https://www.craiggant.com" />
+		</Html>
+	);
 
 	return (
 		<>
-			<color args={[backgroundColor]} attach="background" />
+			<color args={['#241a1a']} attach="background" />
 			<Environment preset="city" />
 			<Html wrapperClass="zoom-in-out">
 				<button
@@ -90,7 +89,7 @@ export default function Experience() {
 					width={2.5}
 					height={1.65}
 					intensity={65}
-					color={reflectionColor}
+					color="#2C3E50"
 					rotation={[-0.1, Math.PI, 0]}
 					position={[0, 0.55, -1.15]}
 				/>
@@ -100,20 +99,12 @@ export default function Experience() {
 					position-y={-1.2}
 					ref={computerRef}
 				>
-					<Html
-						distanceFactor={1.17}
-						transform
-						position={[0, 1.56, -1.4]}
-						rotation-x={-0.256}
-						wrapperClass="computerScreen"
-					>
-						<iframe src="https://www.craiggant.com" />
-					</Html>
+					{screenContent}
 				</primitive>
 			</PresentationControls>
 			<ContactShadows
 				position-y={-1.4}
-				opacity={0.4}
+				opacity={0.6}
 				scale={5}
 				blur={2.4}
 			/>
