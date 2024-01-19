@@ -8,11 +8,6 @@
 	box-shadow: var(--box-shadow);
 	transition: var(--box-shadow-transition);
 
-	&:hover {
-		box-shadow: var(--inset-box-shadow);
-		transition: inset 2s ease-in-out;
-	}
-
 	&__top {
 		@include flex(column);
 		width: 100%;
