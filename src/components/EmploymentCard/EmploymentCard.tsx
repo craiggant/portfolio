@@ -23,14 +23,20 @@ const EmploymentCard = ({
 		? taskDescriptions.map((desc) => <p key={desc}>{desc}</p>)
 		: null;
 
+	const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
+
 	const tagsToRender = useMemo(() => {
 		if (!technologies.length) return null;
 		return technologies.map((tag) => (
-			<span className="employment-card__right-tags-wrapper" key={tag}>
+			<span
+				className="employment-card__right-tags-wrapper"
+				key={tag}
+				style={{ borderRadius: isFirefox ? '' : '2rem' }}
+			>
 				{tag}
 			</span>
 		));
-	}, [technologies]);
+	}, [technologies, isFirefox]);
 
 	const notableAchievementToRender = useMemo(() => {
 		if (!notableAchievement) return null;
