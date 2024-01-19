@@ -9,11 +9,6 @@
 	transition: var(--box-shadow-transition);
 	gap: 1rem;
 
-	&:hover {
-		box-shadow: var(--inset-box-shadow);
-		transition: inset 2s ease-in-out;
-	}
-
 	&__visual {
 		@include flex(column, space-between);
 		gap: 1rem;
