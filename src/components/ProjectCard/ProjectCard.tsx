@@ -19,8 +19,14 @@ const ProjectCard = ({
 	technologies,
 	image
 }: TProjectCardProps) => {
+	const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
+
 	const tagsToRender = technologies.map((tech) => (
-		<span className="project-card__info-technologies-tag" key={tech}>
+		<span
+			className="project-card__info-technologies-tag"
+			key={tech}
+			style={{ borderRadius: isFirefox ? '' : '2rem' }}
+		>
 			{tech}
 		</span>
 	));
