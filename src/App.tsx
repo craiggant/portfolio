@@ -1,5 +1,5 @@
 // components
-// import { ThreeCanvas } from './components';
+import { ThreeCanvas } from './components';
 
 // contexts
 import { ColorThemeProvider } from './contexts';
@@ -23,23 +23,23 @@ const App = () => {
 		);
 	}
 
-	// if (window.location.hostname.includes('portfolio')) {
+	if (window.location.hostname.includes('portfolio')) {
+		return (
+			<>
+				<ColorThemeProvider>
+					<Homepage />
+				</ColorThemeProvider>
+			</>
+		);
+	}
+
 	return (
 		<>
 			<ColorThemeProvider>
-				<Homepage />
+				<ThreeCanvas />
 			</ColorThemeProvider>
 		</>
 	);
-	// }
-
-	// return (
-	// 	<>
-	// 		<ColorThemeProvider>
-	// 			<ThreeCanvas />
-	// 		</ColorThemeProvider>
-	// 	</>
-	// );
 };
 
 export default App;

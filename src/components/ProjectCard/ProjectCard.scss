@@ -9,11 +9,6 @@
 	transition: var(--box-shadow-transition);
 	gap: 1rem;
 
-	&:hover {
-		box-shadow: var(--inset-box-shadow);
-		transition: inset 2s ease-in-out;
-	}
-
 	&__left {
 		@include flex(column, space-between);
 		gap: 1rem;
@@ -53,7 +48,6 @@
 			&-tag {
 				@include flex(row, center, center, wrap);
 				gap: 0.5rem;
-				border-radius: 2rem;
 				padding: 0.25rem 0.5rem;
 				border: var(--icon-alt) 2px solid;
 				color: var(--icon-alt);

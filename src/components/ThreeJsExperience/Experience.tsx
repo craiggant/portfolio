@@ -1,5 +1,5 @@
 // packages
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import {
@@ -10,6 +10,7 @@ import {
 	useGLTF
 } from '@react-three/drei';
 import { useResize } from '../../hooks';
+import { Homepage } from '../../pages';
 
 const positionVector = new THREE.Vector3();
 const zoomedInVector = new THREE.Vector3(0, 0.7, 0);
@@ -74,17 +75,10 @@ export default function Experience() {
 	});
 
 	// conditionally rendering prevents visual issues on resize
-	const screenContent = isResizing ? null : (
-		<Html
-			distanceFactor={1.17}
-			transform
-			position={[0, 1.56, -1.4]}
-			rotation-x={-0.256}
-			wrapperClass="computerScreen"
-		>
-			<iframe src="https://craiggant-portfolio.vercel.app" />
-		</Html>
-	);
+	const computerScreen = useMemo(() => {
+		if (isResizing) return;
+		return <iframe src="https://www.craiggant-portfolio.com/" />;
+	}, [isResizing]);
 
 	return (
 		<>
@@ -113,13 +107,20 @@ export default function Experience() {
 					rotation={[-0.1, Math.PI, 0]}
 					position={[0, 0.55, -1.15]}
 				/>
-
 				<primitive
+					ref={computerRef}
 					object={computer.scene}
 					position-y={-1.2}
-					ref={computerRef}
 				>
-					{screenContent}
+					<Html
+						transform
+						wrapperClass="computerScreen"
+						distanceFactor={1.17}
+						position={[0, 1.56, -1.4]}
+						rotation-x={-0.256}
+					>
+						{computerScreen}
+					</Html>
 				</primitive>
 			</PresentationControls>
 			<ContactShadows
