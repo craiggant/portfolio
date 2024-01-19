@@ -77,7 +77,8 @@ export default function Experience() {
 	// conditionally rendering prevents visual issues on resize
 	const computerScreen = useMemo(() => {
 		if (isResizing) return;
-		return <iframe src="https://www.craiggant-portfolio.com/" />;
+		// return <iframe src="https://www.craiggant-portfolio.com/" />;
+		return <Homepage />;
 	}, [isResizing]);
 
 	return (
