@@ -1,5 +1,7 @@
 // components
+import { Suspense } from 'react';
 import { ThreeCanvas } from './components';
+import { Spinner } from './components/Widgets';
 
 // contexts
 import { ColorThemeProvider } from './contexts';
@@ -34,11 +36,11 @@ const App = () => {
 	}
 
 	return (
-		<>
+		<Suspense fallback={<Spinner />}>
 			<ColorThemeProvider>
 				<ThreeCanvas />
 			</ColorThemeProvider>
-		</>
+		</Suspense>
 	);
 };
 
