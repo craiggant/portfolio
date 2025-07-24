@@ -2,6 +2,31 @@ import { TEmploymentHistory } from '../types';
 
 const employmentHistory: TEmploymentHistory[] = [
 	{
+		company: 'The Walt Disney Company',
+		companyUrl: 'https://thewaltdisneycompany.com/',
+		endDate: 'Present',
+		id: '9',
+		startDate: 'Apr 2024',
+		taskDescriptions: [
+			'- Develop custom full-stack applications supporting internal business operations.',
+			'- Create performant and scalable Uls with TypeScript, React, Next.js, and Vite',
+			'- Build and maintain robust backend services using Python, Django, Django Ninja, and PostgreSQL',
+			'- Contribute to an internal, reusable component library I originally created, now adopted across multiple Disney applications',
+			'- Contribute to high-impact applications that facilitate multi-million dollar sales, including transforming complex, manual spreadsheet workflows into efficient, reliable, user-friendly software solutions'
+		],
+		technologies: [
+			'TypeScript',
+			'Python',
+			'Next',
+			'Vite',
+			'Django',
+			'Django Ninja',
+			'React',
+			'PostgreSQL'
+		],
+		title: 'Senior Software Engineer'
+	},
+	{
 		company: 'Mass Virtual',
 		companyUrl: 'https://massvirtual.com/',
 		endDate: 'Dec 2023',
