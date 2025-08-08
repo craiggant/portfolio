@@ -16,8 +16,7 @@ const ProjectCard = ({
 	githubUrl,
 	liveUrl,
 	title,
-	technologies,
-	image
+	technologies
 }: TProjectCardProps) => {
 	const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
 
@@ -34,11 +33,6 @@ const ProjectCard = ({
 	return (
 		<div className="project-card">
 			<div className="project-card__left">
-				<img
-					className="project-card__left-image"
-					src={image}
-					alt={title}
-				/>
 				<div className="project-card__left-links">
 					{githubUrl && <LinkOut url={githubUrl} text="Code" />}
 					{liveUrl && <LinkOut url={liveUrl} text="Deployed site" />}

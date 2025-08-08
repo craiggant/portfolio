@@ -36,7 +36,6 @@ const Homepage = () => {
 			technologies={p.technologies}
 			githubUrl={p.githubUrl}
 			liveUrl={p.liveUrl}
-			image={p.image}
 		/>
 	));
 
