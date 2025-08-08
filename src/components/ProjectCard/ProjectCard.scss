@@ -12,14 +12,10 @@
 	&__left {
 		@include flex(column, space-between);
 		gap: 1rem;
+		width: 13rem;
 
 		&-links {
 			@include flex(column);
-		}
-
-		&-image {
-			max-width: 13rem;
-			border: 1px solid var(--icon);
 		}
 	}
 

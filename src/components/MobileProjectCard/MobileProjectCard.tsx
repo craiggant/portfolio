@@ -16,8 +16,7 @@ const MobileProjectCard = ({
 	githubUrl,
 	liveUrl,
 	title,
-	technologies,
-	image
+	technologies
 }: TProjectCardProps) => {
 	const tagsToRender = technologies.map((tech) => (
 		<span className="mobile-project-card__technologies-tag" key={tech}>
@@ -29,11 +28,6 @@ const MobileProjectCard = ({
 		<div className="mobile-project-card">
 			<div className="mobile-project-card__title">{title}</div>
 			<div className="mobile-project-card__visual">
-				<img
-					className="mobile-project-card__visual-image"
-					src={image}
-					alt={title}
-				/>
 				<div className="mobile-project-card__visual-links">
 					{githubUrl && <LinkOut url={githubUrl} text="Code" />}
 					{liveUrl && <LinkOut url={liveUrl} text="Deployed site" />}

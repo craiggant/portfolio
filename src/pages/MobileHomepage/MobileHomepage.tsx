@@ -65,7 +65,6 @@ const MobileHomepage = () => {
 					technologies={p.technologies}
 					githubUrl={p.githubUrl}
 					liveUrl={p.liveUrl}
-					image={p.image}
 				/>
 			));
 		}
@@ -78,7 +77,6 @@ const MobileHomepage = () => {
 				technologies={p.technologies}
 				githubUrl={p.githubUrl}
 				liveUrl={p.liveUrl}
-				image={p.image}
 			/>
 		));
 	}, [isMediumScreen]);
