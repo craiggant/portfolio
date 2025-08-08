@@ -1,0 +1,42 @@
+@use '../../../styles/' as *;
+
+.spinner {
+	--spin-lin-grad: linear-gradient(currentColor 0 0);
+	--spin-bg-pos-one: 0 0, 100% 0, 100% 100%, 0 100%;
+	--spin-bg-pos-two: 100% 0, 100% 100%, 0 100%, 0 0;
+
+	&__container {
+		@include flex(row, center, center);
+		width: 100vw;
+		height: 100vh;
+		background-color: #241a1a;
+	}
+
+	width: 4rem;
+	height: 4rem;
+	color: #405c73;
+	background: var(--spin-lin-grad), var(--spin-lin-grad), var(--spin-lin-grad),
+		var(--spin-lin-grad);
+	background-size: 2rem 2rem;
+	background-repeat: no-repeat;
+	animation: spinner 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+
+@keyframes spinner {
+	0% {
+		background-position: var(--spin-bg-pos-one);
+	}
+	33% {
+		background-position: var(--spin-bg-pos-one);
+		width: 5rem;
+		height: 5rem;
+	}
+	66% {
+		background-position: var(--spin-bg-pos-two);
+		width: 5rem;
+		height: 5rem;
+	}
+	100% {
+		background-position: var(--spin-bg-pos-two);
+	}
+}

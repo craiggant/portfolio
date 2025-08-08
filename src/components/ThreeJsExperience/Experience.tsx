@@ -10,7 +10,6 @@ import {
 	useGLTF
 } from '@react-three/drei';
 import { useResize } from '../../hooks';
-import { Homepage } from '../../pages';
 
 const positionVector = new THREE.Vector3();
 const zoomedInVector = new THREE.Vector3(0, 0.7, 0);
